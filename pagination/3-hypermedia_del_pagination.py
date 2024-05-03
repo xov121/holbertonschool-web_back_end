@@ -45,7 +45,8 @@ class Server:
             page_size (int): The current page size.
 
         Returns:
-            dict: A dictionary containing the deletion-resilient pagination data.
+            dict: A dictionary containing the deletion-resilient pagination
+            data.
         """
         indexed_data = self.indexed_dataset()
         assert isinstance(index, int) and 0 <= index < len(indexed_data)
