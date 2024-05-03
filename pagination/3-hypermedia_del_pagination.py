@@ -29,10 +29,14 @@ class Server:
         """Dataset indexed by sorting position, starting at 0."""
         if self.__indexed_dataset is None:
             dataset = self.dataset()
-            self.__indexed_dataset = {i: dataset[i] for i in range(len(dataset))}
+            self.__indexed_dataset = {
+                i: dataset[i] for i in range(len(dataset))
+            }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+    def get_hyper_index(
+        self, index: int = None, page_size: int = 10
+    ) -> Dict:
         """
         Return a dictionary containing the deletion-resilient pagination data.
 
@@ -56,7 +60,9 @@ class Server:
                 continue
             current_index += 1
 
-        next_index = current_index if current_index < len(indexed_data) else None
+        next_index = (
+            current_index if current_index < len(indexed_data) else None
+        )
         return {
             "index": index,
             "next_index": next_index,
