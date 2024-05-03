@@ -2,7 +2,7 @@
 """Module to list all documents in a collection."""
 
 
-def list_all(mongo_collection: Collection):
+def list_all(mongo_collection):
     """
     Lists all documents in a MongoDB collection.
     """
