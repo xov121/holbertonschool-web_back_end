@@ -1,4 +1,5 @@
 export default function hasValuesFromArray(set, array) {
-	//  Testing hotfix
-  return array.every(value => set.has(value));
+  // for every item in ``array``: check that it's present in ``set``.
+  // If even one item in ``array`` isn't present in set, return false.
+  return array.every((item) => set.has(item));
 }
