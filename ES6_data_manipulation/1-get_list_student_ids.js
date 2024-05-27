@@ -1,10 +1,3 @@
-#!/usr/bin/node
-
-function getListStudentIds(array) {
-  if (!Array.isArray(array)) {
-    return [];
-  }
-  return array.map(student => student.id);
-}
-
+const getListStudentIds = (listOfStudents) => (listOfStudents && Array.isArray(listOfStudents)
+  ? listOfStudents.map((item) => item.id) : []);
 export default getListStudentIds;
